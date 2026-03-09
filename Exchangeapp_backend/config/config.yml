@@ -3,7 +3,7 @@ app:
   port: :3000
 
 database:
-  dsn: root:123456@tcp(127.0.0.1:3306)/test?charset=utf8mb4&parseTime=True&loc=Local
+  dsn: root:liujinshun2023@163.com@tcp(115.190.190.83:3306)/currnecy_exchange_db?charset=utf8mb4&parseTime=True&loc=Local
   MaxIdleConns: 11
   MaxOpenCons: 114
 
