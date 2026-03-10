@@ -13,7 +13,7 @@ func main() {
 	port := config.AppConfig.App.Port
 
 	if port == "" {
-		port = ":8080"
+		port = ":9090"
 	}
 
 	r.Run(port)
