@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"go_code/models"
+	"go_code/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -14,4 +15,13 @@ func Register(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+
+	hashPwd, err := utils.HashPassword(user.Password)
+
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	user.Password = hashPwd
 }
